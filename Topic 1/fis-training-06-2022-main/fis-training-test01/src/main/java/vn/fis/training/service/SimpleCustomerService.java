@@ -69,10 +69,10 @@ public class SimpleCustomerService implements CustomerService {
 
     @Override
     public List<SummaryCustomerByAgeDTO> summaryCustomerByAgeOrderByAgeDesc() {
-        List<SummaryCustomerByAgeDTO> customers = new ArrayList<>();
+        List<SummaryCustomerByAgeDTO> summary = new ArrayList<>();
         customerStore.findAll().stream().collect(Collectors.groupingBy(Customer::getAge, Collectors.counting()))
-                .forEach((k, v) -> customers.add(new SummaryCustomerByAgeDTO(k.intValue(), v.intValue())));
-        return customers.stream().sorted(Collections.reverseOrder(Comparator.comparing(
+                .forEach((k, v) -> summary.add(new SummaryCustomerByAgeDTO(k.intValue(), v.intValue())));
+        return summary.stream().sorted(Collections.reverseOrder(Comparator.comparing(
                 SummaryCustomerByAgeDTO::getAge))).collect(Collectors.toList());
     }
 
