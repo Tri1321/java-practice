@@ -3,7 +3,6 @@ package vn.fis.training.store;
 import vn.fis.training.domain.Customer;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public final class InMemoryCustomerStore {
     /**
