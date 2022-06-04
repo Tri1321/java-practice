@@ -14,7 +14,7 @@ public class Validation {
     }
 
     public static boolean validateDob(LocalDate dob) {
-        return dob.isBefore(LocalDate.now().minusYears(10));
+        return dob.isBefore(LocalDate.now().plusDays(1).minusYears(10));
     }
 
     public static boolean validateMobile(String mobile) {
