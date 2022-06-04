@@ -93,7 +93,7 @@ public class Customer {
     }
 
     public long getAge() {
-        return Math.abs(ChronoUnit.YEARS.between(LocalDate.now(), this.birthDay));
+        return ChronoUnit.YEARS.between(this.birthDay, LocalDate.now());
     }
 
     public String getFormattedName() {
