@@ -28,8 +28,6 @@ public final class InMemoryCustomerStore {
      * @return : tra ve toan bo danh sach customer trong he thong
      */
     public List<Customer> findAll() {
-        if(mapCustomer.size() == 0)
-            return Collections.emptyList();
         return new ArrayList<>(mapCustomer.values());
     }
 
