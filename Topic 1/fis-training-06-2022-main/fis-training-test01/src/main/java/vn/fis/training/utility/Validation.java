@@ -8,8 +8,8 @@ public class Validation {
     public static boolean validateName(String name) {
         return name != null &&
                 name.trim().length() > 0 &&
-                name.length() < 50 &&
-                name.length() > 5 &&
+                name.length() <= 50 &&
+                name.length() >= 5 &&
                 name.matches("[a-z,A-Z ]+");
     }
 
